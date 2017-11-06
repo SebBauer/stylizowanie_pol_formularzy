@@ -1,0 +1,107 @@
+form #example_one_a + label::before, form #example_one_b + label::before, form #example_one_c + label::before, form #example_one_d + label::before, form #example_one_e + label::before, form #example_one_f + label::before, form #example_one_g + label::before, form #example_one_h + label::before {
+  position: absolute;
+  content: ' ';
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  left: 0;
+  margin-top: .3rem; }
+
+form #example_one_a:checked + label::before, form #example_one_b:checked + label::before, form #example_one_c:checked + label::before, form #example_one_d:checked + label::before, form #example_one_e:checked + label::before, form #example_one_f:checked + label::before, form #example_one_g:checked + label::before, form #example_one_h:checked + label::before {
+  position: absolute;
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  left: 0;
+  margin-top: .3rem; }
+
+form #button_one, form #button_two, form #button_three, form #button_four {
+  border-radius: 5px;
+  border: 1px solid black; }
+
+form input[type="checkbox"] {
+  visibility: hidden; }
+form input[type="button"] {
+  margin-left: 1rem;
+  height: 2rem;
+  font-family: 'Cabin', cursive; }
+form input[type="checkbox"] + label {
+  position: relative;
+  padding-left: 1.6rem;
+  font-family: 'Cabin', cursive; }
+form #example_one_a:checked + label::before, form #example_one_b:checked + label::before {
+  transition: background 1s ease;
+  background-color: crimson; }
+form #button_one {
+  background-color: #d0506a;
+  color: white; }
+form #example_one_c + label i, form #example_one_d + label i {
+  display: none; }
+form #example_one_c:checked + label i, form #example_one_d:checked + label i {
+  top: 0.1rem;
+  left: 0.15rem;
+  position: absolute;
+  display: inherit;
+  color: white;
+  transition: all 1s ease; }
+form #example_one_c:checked + label::before, form #example_one_d:checked + label::before {
+  background-color: black;
+  transition: background 1s ease; }
+form #button_two {
+  transition: background 1s ease, color 1s ease; }
+  form #button_two:hover {
+    background-color: crimson;
+    color: white; }
+form #example_one_e + label i, form #example_one_f + label i {
+  top: -0.275rem;
+  left: -0.025rem;
+  position: absolute;
+  display: inherit;
+  color: white;
+  font-size: 1.7rem; }
+form #example_one_e:checked + label i, form #example_one_f:checked + label i {
+  top: -0.275rem;
+  left: -0.025rem;
+  position: absolute;
+  display: inherit;
+  color: black;
+  transition: all 1s ease;
+  font-size: 1.7rem; }
+form #example_one_e:checked + label::before, form #example_one_f:checked + label::before {
+  transition: all 1s ease; }
+form #button_three {
+  background-color: white;
+  transition: background 1s ease, color 1s ease, box-shadow 1s ease; }
+  form #button_three:hover {
+    background-color: crimson;
+    border: 2px solid black;
+    box-shadow: 0 0 20px #a24659;
+    color: white; }
+form #example_one_g + label::before, form #example_one_h + label::before {
+  border-radius: 50%; }
+form #example_one_g + label i, form #example_one_h + label i {
+  top: -0.15rem;
+  left: 0.015rem;
+  position: absolute;
+  display: inherit;
+  color: transparent;
+  font-size: 1.5rem; }
+form #example_one_g:checked + label i, form #example_one_h:checked + label i {
+  top: -0.2rem;
+  left: -0.1rem;
+  position: absolute;
+  display: inherit;
+  color: black;
+  transition: all 1s ease;
+  font-size: 1.7rem; }
+form #example_one_g:checked + label::before, form #example_one_h:checked + label::before {
+  border: 0px solid white;
+  border-radius: 50%;
+  transition: border 1s ease; }
+form #button_four {
+  background-color: white;
+  transition: box-shadow 1s ease; }
+  form #button_four:hover {
+    box-shadow: 0 0 1rem crimson inset; }

@@ -1,0 +1,26 @@
+%only_label_before {
+    position: absolute;
+    content: ' ';
+    width: 1.2rem;
+    height: 1.2rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    left: 0;
+    margin-top: .3rem;
+}
+
+%example_checked_and_label_before {
+    position: absolute;
+    width: 1.2rem;
+    height: 1.2rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    left: 0;
+    margin-top: .3rem;
+    
+}
+
+%button_border_and_border_radius {
+    border-radius: 5px;
+    border: 1px solid black;
+}

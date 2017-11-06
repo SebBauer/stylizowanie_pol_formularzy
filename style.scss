@@ -1,0 +1,171 @@
+@import 'Classes';
+@import 'Mixins';
+@import 'Variables';
+
+form {
+    
+input[type="checkbox"] {
+    visibility: hidden;
+}
+
+input[type="button"] {
+    margin-left: 1rem;
+    height: 2rem;
+    font-family: 'Cabin', cursive;
+}
+
+input[type="checkbox"] + label {
+    position: relative;
+    padding-left: 1.6rem;
+    font-family: 'Cabin', cursive;
+}
+
+// Example 1 //
+
+#example_one_a + label::before, #example_one_b + label::before {
+    @extend %only_label_before;
+}
+
+#example_one_a:checked + label::before, #example_one_b:checked + label::before {
+    @extend %example_checked_and_label_before;
+    transition: background 1s ease;
+    background-color: crimson;
+}
+
+
+#button_one {
+    @extend %button_border_and_border_radius;
+    background-color: #d0506a;
+    color: white;
+}
+
+// Example 2 //
+
+#example_one_c + label::before, #example_one_d + label::before {
+    @extend %only_label_before;
+}
+    
+    #example_one_c + label, #example_one_d + label{
+        i {
+            display: none;
+        }
+    }
+    
+        #example_one_c:checked + label, #example_one_d:checked + label{
+        i {
+            @include top_and_left(.1rem, .15rem);
+            @include example_and_label_position_and_display;
+            color: white;
+            transition: $transition_all_1s_ease;
+        }
+    }
+
+#example_one_c:checked + label::before, #example_one_d:checked + label::before {
+    @extend %example_checked_and_label_before;
+    background-color: black;
+    transition: background 1s ease;
+}
+
+
+#button_two {
+    @extend %button_border_and_border_radius;
+    transition: background 1s ease, color 1s ease;
+    
+    &:hover {
+        background-color: crimson;
+        color: white;
+    }
+}
+    
+// Example 3 //
+
+#example_one_e + label::before, #example_one_f + label::before {
+    @extend %only_label_before;
+}
+    
+#example_one_e + label, #example_one_f + label{
+        i {
+            @include top_and_left(-.275rem, -.025rem);
+            @include example_and_label_position_and_display;
+            color: white;
+            font-size: $font_1_dot_7;
+        }
+}
+    
+#example_one_e:checked + label, #example_one_f:checked + label{
+        i {
+            @include top_and_left(-.275rem, -.025rem);
+            @include example_and_label_position_and_display;
+            color: black;
+            transition: $transition_all_1s_ease;
+            font-size: $font_1_dot_7;
+        }
+}
+
+#example_one_e:checked + label::before, #example_one_f:checked + label::before {
+    @extend %example_checked_and_label_before;
+    transition: $transition_all_1s_ease;
+}
+
+
+#button_three {
+    @extend %button_border_and_border_radius;
+    background-color: white;
+    transition: background 1s ease, color 1s ease, box-shadow 1s ease;
+    
+    &:hover {
+        background-color: crimson;
+        border: 2px solid black;
+        box-shadow: 0 0 20px #a24659;
+        color: white;
+    }
+}
+    
+// Example 4 //
+
+#example_one_g + label::before, #example_one_h + label::before {
+    @extend %only_label_before;
+    border-radius: 50%;
+}
+    
+#example_one_g + label, #example_one_h + label{
+        i {
+            @include top_and_left(-.15rem, .015rem);
+            @include example_and_label_position_and_display;
+            color: rgba(0, 0, 0, 0.00);
+            font-size: 1.5rem;
+        }
+}
+    
+#example_one_g:checked + label, #example_one_h:checked + label{
+        i {
+            @include top_and_left(-.2rem, -.1rem);
+            @include example_and_label_position_and_display;
+            color: black;
+            transition: $transition_all_1s_ease;
+            font-size: $font_1_dot_7;
+        }
+}
+
+#example_one_g:checked + label::before, #example_one_h:checked + label::before {
+    @extend %example_checked_and_label_before;    
+    border: 0px solid white;
+    border-radius: 50%;
+    transition: border 1s ease;
+}
+
+
+#button_four {
+    @extend %button_border_and_border_radius;
+    background-color: white;
+    transition: box-shadow 1s ease;
+    
+    &:hover {
+        box-shadow: 0 0 1rem crimson inset;
+    }
+}
+
+    
+}
+
+

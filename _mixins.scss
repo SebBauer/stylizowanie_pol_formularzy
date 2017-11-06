@@ -1,0 +1,9 @@
+@mixin example_and_label_position_and_display {
+    position: absolute;
+    display: inherit;
+}
+
+@mixin top_and_left ($top, $left) {
+    top: $top;
+    left: $left;
+}
