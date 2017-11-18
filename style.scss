@@ -24,6 +24,7 @@ input[type="checkbox"] + label {
 
 #example_one_a + label::before, #example_one_b + label::before {
     @extend %only_label_before;
+    transition: background 1s ease;
 }
 
 #example_one_a:checked + label::before, #example_one_b:checked + label::before {
@@ -31,34 +32,29 @@ input[type="checkbox"] + label {
     transition: background 1s ease;
     background-color: crimson;
 }
-
+    
 
 #button_one {
     @extend %button_border_and_border_radius;
     background-color: #d0506a;
-    color: white;
 }
 
 // Example 2 //
 
 #example_one_c + label::before, #example_one_d + label::before {
     @extend %only_label_before;
+    transition: $transition_all_1s_ease;
+    color: white;
 }
     
     #example_one_c + label, #example_one_d + label{
         i {
-            display: none;
-        }
-    }
-    
-        #example_one_c:checked + label, #example_one_d:checked + label{
-        i {
+            color: white;
             @include top_and_left(.1rem, .15rem);
             @include example_and_label_position_and_display;
-            color: white;
-            transition: $transition_all_1s_ease;
         }
     }
+
 
 #example_one_c:checked + label::before, #example_one_d:checked + label::before {
     @extend %example_checked_and_label_before;
@@ -81,6 +77,7 @@ input[type="checkbox"] + label {
 
 #example_one_e + label::before, #example_one_f + label::before {
     @extend %only_label_before;
+     
 }
     
 #example_one_e + label, #example_one_f + label{
@@ -88,7 +85,8 @@ input[type="checkbox"] + label {
             @include top_and_left(-.275rem, -.025rem);
             @include example_and_label_position_and_display;
             color: white;
-            font-size: $font_1_dot_7;
+            font-size: $font_1_dot_7; 
+            transition: $transition_all_1s_ease;
         }
 }
     
@@ -134,6 +132,7 @@ input[type="checkbox"] + label {
             @include example_and_label_position_and_display;
             color: rgba(0, 0, 0, 0.00);
             font-size: 1.5rem;
+            transition: $transition_all_1s_ease;
         }
 }
     
